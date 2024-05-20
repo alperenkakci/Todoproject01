@@ -25,7 +25,9 @@ func main() {
 	{
 		protected.POST("/todos", todoCntrl.CreateTodoList)
 		protected.GET("/todos/:id", todoCntrl.GetTodoList)
-		// Add other CRUD endpoints here
+		protected.PUT("/todos/:id", todoCntrl.UpdateTodoList)
+		protected.DELETE("/todos/:id", todoCntrl.DeleteTodoList)
+		protected.POST("/todos/:id/items", todoCntrl.AddTodoItem)
 	}
 
 	router.Run("localhost:8080")
